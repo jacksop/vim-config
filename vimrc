@@ -30,6 +30,7 @@ set background=dark "tell vim to use colours that look good on a dark bg
 set splitright "opens new split on the right
 set splitbelow "open new vsplit on the bottom
 "set gdefault "assume the /g flag on :s substitutions to replace all matches in a line
+set colorcolumn=80
 
 filetype plugin indent on
 
