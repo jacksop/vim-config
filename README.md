@@ -2,6 +2,12 @@
 
 My collection of vim settings and plugins.
 
+## Setting up
+
+Create a ~/.vim directory and install [Tim Pope's Pathogen.vim plugin](https://github.com/tpope/vim-pathogen).
+
+Make sure you symlink from .vimrc to the vimrc file. `ln -s ~/.vim/vimrc ~/.vimrc`
+
 ## Using submodules
 
 Remember to run the following when new submodules are added:
