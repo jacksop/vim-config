@@ -5,7 +5,7 @@ set nocompatible "ensures vim over vi
 
 syntax enable
 
-set number
+set relativenumber
 set ruler "show the cursor position all the time
 set noerrorbells visualbell t_vb= "turn off annoying bells
 set softtabstop=2 "number of space chars a tab counts for
@@ -29,6 +29,7 @@ set laststatus=2  "Always show status line.
 set background=dark "tell vim to use colours that look good on a dark bg
 set splitright "opens new split on the right
 set splitbelow "open new vsplit on the bottom
+set colorcolumn=80
 "set gdefault "assume the /g flag on :s substitutions to replace all matches in a line
 
 filetype plugin indent on
@@ -39,4 +40,4 @@ highlight StatusLine ctermfg=blue ctermbg=yellow
 highlight Cursor guibg=Green guifg=NONE
 
 command! Q q "Bind :Q to :q
-command! Qall qall 
+command! Qall qall
