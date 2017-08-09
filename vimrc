@@ -26,18 +26,23 @@ set smarttab
 set incsearch "Show incremental search
 set ignorecase smartcase
 set laststatus=2  "Always show status line.
+"set background=light "tell vim to use colours that look good on a dark bg
 set background=dark "tell vim to use colours that look good on a dark bg
 set splitright "opens new split on the right
 set splitbelow "open new vsplit on the bottom
 set colorcolumn=80
 "set gdefault "assume the /g flag on :s substitutions to replace all matches in a line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 filetype plugin indent on
 
 autocmd BufWritePre * :%s/\s\+$//e "Remove trailling whitespace on :w
 
-highlight StatusLine ctermfg=blue ctermbg=yellow
-highlight Cursor guibg=Green guifg=NONE
+let g:solarized_termcolors=256
+colorscheme solarized
+"commented these two lines when trying solarized
+"highlight StatusLine ctermfg=blue ctermbg=yellow
+"highlight Cursor guibg=Green guifg=NONE
 
 command! Q q "Bind :Q to :q
 command! Qall qall
