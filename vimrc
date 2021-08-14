@@ -1,8 +1,30 @@
-execute pathogen#infect()
-call pathogen#helptags()
+" ========================================================================
+" Vundle stuff
+" ========================================================================
+set nocompatible " required by Vundle
+filetype off     " required by Vundle
 
-set nocompatible "ensures vim over vi
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" My bundles
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'scrooloose/nerdtree'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Non plugin stuff
 syntax enable
 
 set relativenumber
@@ -34,15 +56,12 @@ set colorcolumn=80
 "set gdefault "assume the /g flag on :s substitutions to replace all matches in a line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-filetype plugin indent on
-
 autocmd BufWritePre * :%s/\s\+$//e "Remove trailling whitespace on :w
 
-let g:solarized_termcolors=256
-colorscheme solarized
-"commented these two lines when trying solarized
-"highlight StatusLine ctermfg=blue ctermbg=yellow
-"highlight Cursor guibg=Green guifg=NONE
+colorscheme jellybeans
 
 command! Q q "Bind :Q to :q
 command! Qall qall
+
+nnoremap <Leader>nt :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>f :NERDTreeFind<CR>
